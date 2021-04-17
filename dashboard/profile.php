@@ -18,6 +18,7 @@ $query = mysqli_query($connect,$sql);
 header('location:../dashboard/profile');
 
 }
+
 ?>
 <?php
 	include '../vendor/connect.php';

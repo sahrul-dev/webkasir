@@ -17,6 +17,11 @@ if (empty($_SESSION['username'])) {
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="../lib/css/all.css">
 	<link rel="stylesheet" href="../asset/css/main.css">
+	<link rel="stylesheet" href="../lib/bootstrap.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"> -->
+	<link rel="stylesheet" href="../lib/DataTables/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="../lib/DataTables/css/dataTables.jqueryui.min.css">
+	<script src="../lib/jquery.min.js" type="text/javascript"></script>
 </head>
 <header>
 	<div class="container">
@@ -110,7 +115,7 @@ nav section:hover{
 nav a{
 	color: #333;
 	font-weight: 300;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 .textarea{
 	width: 100%;
@@ -136,6 +141,7 @@ header{
 	color: #333;
 
 }
+
 header .title{
 	font-size: 20px;
 	font-weight: 800;
@@ -161,8 +167,16 @@ header ul li{
 header ul li a{
 	font-weight: normal;
 	padding: 5px 20px;
-	text-decoration: none;
+	text-decoration: none !important;
 	color: grey;
+}
+.green{
+	background: green;
+	color: #fff;
+}
+.orange{
+	background: orange;
+	color: #fff;
 }
 .r-icon{
 	margin-left: 10px;
@@ -207,7 +221,7 @@ header img{
 	width: 100%;
 }
 .container{
-	max-width: 85rem;
+	max-width: 85%;
 }
 h1{
 	color: #333;
@@ -281,11 +295,10 @@ h1{
 	color: #fff;
 }
 .jumbotron{
+	background: #fff !important;
 	margin-top: 80px;
 }
-.table{
-	margin-top: 30px;
-}
+
 .modal{
 	padding: 20px;
 	z-index: 999;
@@ -299,17 +312,16 @@ h1{
 
 }
 
-table{
-	width: 100%;
-	/*border: 1px solid #dcdcdc;*/
+/*table{
+	border: 1px solid #dcdcdc;
 	border: 1px solid #dcdcdc;
 	padding: 20px;
 	border-collapse: collapse;
 }
 td button{
 	margin-left: 10px;
-}
-tr, th{
+}*/
+/*tr, th{
 	border:  none;
 	border-bottom: 1px solid #dcdcdc;
 	padding: 15px;
@@ -326,8 +338,8 @@ table tr:nth-child(even){
 }
 tr th{
 	background: #fff !important;
-}
-td{
+}*/
+/*td{
 	overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -335,10 +347,10 @@ td{
 }
 th label{
 	font-weight: 400;
-}
-tr:hover{
+}*/
+/*tr:hover{
 	background: #f2f2f2;
-}
+}*/
 .select{
 	padding: 8px;
 	width: 80px;
@@ -402,6 +414,14 @@ tr:hover{
 	text-decoration: none;
 	color: #333;
 }
+.box{
+	padding: 20px;
+	width: 100%;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background: #fff;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
 </style>
 
 <script>
@@ -443,5 +463,15 @@ function showTime() {
 			.innerHTML = currentTime;
 }
 showTime();	
+
+</script>
+<script src="../lib/DataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="../lib/DataTables/js/jquery.dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#example').DataTable({
+    	responsive: true
+    });
+} );
 
 </script>

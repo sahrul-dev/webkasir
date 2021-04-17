@@ -44,79 +44,41 @@ if($_SESSION['username']['level'] == 'SuperAdmin') {
 		<br>
 		<button class="btn skyblue" onclick="showModal();">Buat Baru<i class="far fa-plus-circle r-icon"></i></button>
 		<br>
-		<div class="table">
-			<div class="wrapper-table">
-			</div>
-			<br><br>	
-			<table>
-				<tr>
-					<th>No</th>
-					<th>id_user</th>
-					<th>nama</th>
-					<th>username</th>
-					<th>level</th>
-					<th>Aksi</th>
-				</tr>
-				<tr>
-				<?php
+		<table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>id_user</th>
+                <th>nama</th>
+                <th>username</th>
+                <th>level</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        		<?php
+        	    include '../vendor/connect.php';
+        		$sql = "SELECT * FROM user";
+				$query = mysqli_query($connect,$sql);
 
-				include '../vendor/connect.php';
-				error_reporting(0);
-				$halaman = 5;
-				$page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
-				$mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
-				$search = $_POST['search'];
-				$sql2 = "SELECT * FROM 	`user`  LIMIT $mulai, $halaman";
-				$query = mysqli_query($connect,$sql2);
-				// $queries = mysqli_query($connect,$sql1);
-				$queryCount = mysqli_query($connect,"SELECT * FROM `user`");
-				$row = mysqli_num_rows($queryCount);
-				$pages = ceil($row/$halaman);
-				$rows = mysqli_num_rows($query);
-				if ($rows == 0) {
-				echo "<td></td>";
-				echo "<td></td>";
-				echo "<td>Data kosong!</td>";
-				echo "<td></td>";
-				echo "<td></td>";
-				echo "<td></td>";
-				}
-				$no = 0;
-				while ($rows = mysqli_fetch_array($query)){
-					$no++;
-				?>
-				    <td><?php echo $no; ?></td>
-					<td><?php echo $rows['id_user']; ?></td>
-				    <td><?php echo $rows['nama'];?></td>
-					<td><?php echo $rows['username']; ?></td>
+				while ($rows = mysqli_fetch_array($query)) {
+        	?>
+            <tr>
+            
+                   <td><?php echo $rows['id_user']; ?></td>
+				    <td><?php echo $rows['nama']; ?></td>
+				    <td><?php echo $rows['username'];?></td>
 					<td><?php echo $rows['level']; ?></td>
-					<td><a href="../vendor/update_user?id_user=<?php echo $rows['id_user']?>"><button class="btn-update">Ubah <i class="far fa-edit r-icon"></i></button></a>
-
-					<a href="../vendor/delete_user?id_user=<?php echo $rows['id_user']?>"><button class="btn-delete" onclick="return confirm('Apakah anda yakin ingin menghapus field ini?');">Hapus <i class="far fa-trash r-icon"></i></button></a></td>
-				</tr>
-
-				<?php
-			}
-				?>
-				<tr>
-					<th><label for="">Ditampilkan  data dari :  <b><?php echo 1; ?></b> ke <b><?php echo $halaman ?></b> </label></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
-					<th><label>Jumlah data : <b><?php echo $row; ?></b></label></th>
-				</tr> 
-			</table>
-			<br>
-		</div>
-		<div class="pagination">
-  <a href="#" onclick="history.back();">Previous</a>
-  <?php for ($i=1; $i<=$pages ; $i++){ ?>
-  <a href="?halaman=<?php echo $i; ?>" class="active"><?php echo $i; ?></a>
-  <?php } ?>
-   <a href="#">Next</a>
-</div>
-</div>
+					<td>
+					<a href="../vendor/update_user?id_user=<?php echo $rows['id_user']?>"><button class="btn-update">Ubah <i class="far fa-edit r-icon"></i></button></a>
+					
+					<a href="../vendor/delete_user?id_user=<?php echo $rows['id_user']?>">
+					<button class="btn-delete" onclick="return confirm('Apakah anda yakin ingin menghapus field ini?');">Hapus <i class="far fa-trash r-icon"></i></button></a>
+			</td>
+			    
+            </tr>
+    <?php } ?> 
+        </tbody>
+    </table>
 	</div> 
 </div>
 <br><br>
