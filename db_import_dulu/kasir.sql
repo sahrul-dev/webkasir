@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Apr 2021 pada 20.26
+-- Waktu pembuatan: 17 Apr 2021 pada 17.10
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -36,7 +36,7 @@ CREATE TABLE `barang` (
   `satuan` varchar(100) NOT NULL,
   `diskon` varchar(100) NOT NULL,
   `jumlah` bigint(10) NOT NULL,
-  `tanggal_masuk` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `tanggal_masuk` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -44,7 +44,9 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `kode_barang`, `harga_barang`, `satuan`, `diskon`, `jumlah`, `tanggal_masuk`) VALUES
-(4, 'Parfum', '001', 10000, 'PCS', '20%', 100, '2021-04-14 18:20:56');
+(7, 'Buku', '001', 5000, 'biji', '0', 30, '2021-04-16'),
+(9, 'sabun', '002', 23, 'biji', '0', 56, '2021-04-17'),
+(10, 'aidh', '90', 90, 'biji', '90', 89, '2021-04-17');
 
 -- --------------------------------------------------------
 
@@ -111,7 +113,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `pelanggan`
