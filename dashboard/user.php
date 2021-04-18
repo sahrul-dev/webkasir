@@ -39,11 +39,13 @@ if($_SESSION['username']['level'] == 'SuperAdmin') {
 		</div>
 		<br><br>
 <div class="container">
-	<div class="jumbotron">		
+	<div class="jumbotron">	
+
 		<h1>User Kasir</h1>
 		<br>
 		<button class="btn skyblue" onclick="showModal();">Buat Baru<i class="far fa-plus-circle r-icon"></i></button>
-		<br>
+		<br><br>
+		<div class="box">		
 		<table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
@@ -69,17 +71,21 @@ if($_SESSION['username']['level'] == 'SuperAdmin') {
 				    <td><?php echo $rows['username'];?></td>
 					<td><?php echo $rows['level']; ?></td>
 					<td>
-					<a href="../vendor/update_user?id_user=<?php echo $rows['id_user']?>"><button class="btn-update">Ubah <i class="far fa-edit r-icon"></i></button></a>
+					<a href="../vendor/update_user?id_user=<?php echo $rows['id_user']?>"><button class="btn-update"><i class="far fa-edit"></i></button></a>
 					
 					<a href="../vendor/delete_user?id_user=<?php echo $rows['id_user']?>">
-					<button class="btn-delete" onclick="return confirm('Apakah anda yakin ingin menghapus field ini?');">Hapus <i class="far fa-trash r-icon"></i></button></a>
+					<button class="btn-delete" onclick="return confirm('Apakah anda yakin ingin menghapus field ini?');"><i class="far fa-trash"></i></button></a>
 			</td>
 			    
             </tr>
     <?php } ?> 
         </tbody>
+        <tfoot>
+        	<tr></tr>
+        </tfoot>
     </table>
 	</div> 
+</div>
 </div>
 <br><br>
 <?php

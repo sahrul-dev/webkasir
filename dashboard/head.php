@@ -137,6 +137,7 @@ header{
 	position: fixed;
 	background: #fff;
 	box-shadow: 0 0 3px rgba(0,0,0,0.2);
+	z-index: 998;
 	padding: 20px;
 	color: #333;
 
@@ -255,6 +256,7 @@ h1{
 	font-size: 15px;
 	font-weight: 600;
 	color: #fff;
+	width: 50px;
 	border: none;
 	border-radius: 4px;
 }
@@ -269,6 +271,10 @@ h1{
 	border: none;
 	border-radius: 4px;
 }
+table{
+	box-sizing: border-box;
+
+}
 .btn-update{
 	padding: 10px;
 	background: darkorange;
@@ -277,6 +283,7 @@ h1{
 	font-size: 15px;
 	font-weight: 600;
 	color: #fff;
+	width: 50px;
 	border: none;
 	border-radius: 4px;
 }
@@ -366,7 +373,6 @@ th label{
 	height: 100vh;
 	background: rgba(0,0,0,0.2);
 }
-
 .search input{
 	padding: 10px;
 	width: 400px	;
@@ -422,6 +428,14 @@ th label{
 	background: #fff;
 	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
 }
+@media only screen and  (max-width: 780px){
+	.box{
+		overflow: auto;
+	}
+	.container{
+		max-width: 100%;
+	}
+}
 </style>
 
 <script>
@@ -466,12 +480,13 @@ showTime();
 
 </script>
 <script src="../lib/DataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
-<script src="../lib/DataTables/js/jquery.dataTables.bootstrap4.min.js"></script>
+<!-- <script src="../lib/DataTables/js/jquery.dataTables.bootstrap4.min.js"></script> -->
 <script type="text/javascript">
 	$(document).ready(function() {
     $('#example').DataTable({
     	responsive: true
     });
 } );
+
 
 </script>

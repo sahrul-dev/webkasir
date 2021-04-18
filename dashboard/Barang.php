@@ -54,13 +54,17 @@
 		<br>
 <div class="container">
 	<div class="jumbotron">
+		
+			
 		<button class="btn skyblue to-right" onclick="history.back();">Kembali <i class="far fa-arrow-right right"></i></button>
 		<br><br>
 		<h1>Barang</h1>
 		<br>
 		<button class="btn skyblue" onclick="showModal();">Tambah Barang<i class="far fa-plus-circle r-icon"></i></button>
 		<br><br>
+		<div class="box">
 		<table id="example" class="table table-striped table-bordered" style="width:100%">
+		<div class="wrap-table">
         <thead>
             <tr>
                 <th>id_barang</th>
@@ -93,10 +97,10 @@
 					<td><?php echo $rows['jumlah']; ?></td>
 					<td><?php echo $rows['tanggal_masuk']?></td>
 					<td>
-					<a href="../vendor/update_barang?id_barang=<?php echo $rows['id_barang']?>"><button class="btn-update">Ubah <i class="far fa-edit r-icon"></i></button></a>
-					
+					<a href="../vendor/update_barang?id_barang=<?php echo $rows['id_barang']?>"><button title="Ubah" class="btn-update"><i class="far fa-edit"></i></button></a>
+					<a href="../vendor/update_barang?id_barang=<?php echo $rows['id_barang']?>"><button title="Ubah Stock" class="btn-update skyblue"><i class="far fa-edit"></i></button></a>
 					<a href="../vendor/delete_barang?id_barang=<?php echo $rows['id_barang']?>">
-					<button class="btn-delete" onclick="return confirm('Apakah anda yakin ingin menghapus field ini?');">Hapus <i class="far fa-trash r-icon"></i></button></a>
+					<button title="Hapus" class="btn-delete" onclick="return confirm('Apakah anda yakin ingin menghapus field ini?');"><i class="far fa-trash"></i></button></a>
 			</td>
 			
             </tr>
@@ -105,7 +109,12 @@
           <tfoot>
           	<tr></tr>
         </tfoot>
+        </div>
     </table>
+
+		</div>
+	</div>
+</div>
 <br><br>
 </body>
 </html>

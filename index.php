@@ -24,7 +24,7 @@ if (empty($_SESSION['username'])) {
 	<form method="POST" action="vendor/auth"> 
 	<div class="box">
 	<h1>Masuk!</h1>
-	<small>Masukan identitas pengguna utnuk melanjutkan</small>
+	<small>Masukan identitas pengguna untuk melanjutkan.</small>
 	<br>
 	<input type="text" placeholder="nama pengguna" name="username" required>
 	<input type="password" placeholder="kata sandi" name="password" required>

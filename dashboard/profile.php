@@ -65,4 +65,5 @@ header('location:../dashboard/profile');
 
 <script>
 	document.title = "Kasir - Profile";
+
 </script>

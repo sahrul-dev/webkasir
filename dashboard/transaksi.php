@@ -545,5 +545,4 @@
 <script>
 	document.title = "Kasir - Transaksi";
 
-
 </script>
