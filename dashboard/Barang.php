@@ -5,7 +5,7 @@
 		<div class="form">
 			<div class="modal-title"><h1>Tambah Barang</h1></div>
 			<br><br>
-		<form method="POST" action="../vendor/insert_barang">
+		<form id="addinfo" method="POST" action="../vendor/insert_barang">
 			<div class="rows">
 				
 			
@@ -98,7 +98,7 @@
 					<td><?php echo $rows['tanggal_masuk']?></td>
 					<td>
 					<a href="../vendor/update_barang?id_barang=<?php echo $rows['id_barang']?>"><button title="Ubah" class="btn-update"><i class="far fa-edit"></i></button></a>
-					<a href="../vendor/update_barang?id_barang=<?php echo $rows['id_barang']?>"><button title="Ubah Stock" class="btn-update skyblue"><i class="far fa-edit"></i></button></a>
+					<a href="../vendor/update_stock?id_stock=<?php echo $rows['id_barang']?>"><button title="Ubah Stock" class="btn-update skyblue"><i class="fas fa-pen-square"></i></button></a>
 					<a href="../vendor/delete_barang?id_barang=<?php echo $rows['id_barang']?>">
 					<button title="Hapus" class="btn-delete" onclick="return confirm('Apakah anda yakin ingin menghapus field ini?');"><i class="far fa-trash"></i></button></a>
 			</td>
@@ -130,7 +130,21 @@
 	}
 </style>
 <script>
-	document.title = "Kasir - Barang";
-
-document.querySelector(".link2").style.fontWeight = "600";
+document.title = "Kasir - Barang";
+// $('#addinfo').submit(function(event) {
+// 	event.preventDefault();
+// 	var $form = $(this);
+// 	$.ajax({
+// 		type: 'POST',
+// 		url: $form.attr('action'),
+// 		data: $form.serialize(),
+// 		success: function(data){
+// 			alertify.success('Berhasil ditambahkan!');
+			
+// 		},
+// 		error:  function(error) {
+// 			alertify.error('Tidak bisa ditambahkan!');
+// 		}
+// 	});
+// })
 </script>

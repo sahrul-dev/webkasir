@@ -4,21 +4,18 @@
 
 include 'connect.php';
 if (isset($_POST['done'])) {
-$id_barang = $_GET['id_barang'];
-$kode_barang = $_POST['kode_barang'];
+$id_barang = $_GET['id_stock'];
 $harga_barang = $_POST['harga_barang'];
-$satuan = $_POST['satuan'];
-$diskon = $_POST['diskon'];
 $jumlah = $_POST['jumlah'];
 
-$sql = "UPDATE `barang` SET harga_barang='$harga_barang', kode_barang='$kode_barang', satuan='$satuan',diskon='$diskon', jumlah='$jumlah' WHERE id_barang ='$id_barang'";
+$sql = "UPDATE `barang` SET harga_barang='$harga_barang', jumlah='$jumlah' WHERE id_barang ='$id_barang'";
 $query = mysqli_query($connect,$sql);
 echo "<script>document.location.href = '/kasir/dashboard/barang';</script> ";
 }
 ?>
 <?php
 	include 'connect.php';
-$id_barang = $_GET['id_barang'];
+$id_barang = $_GET['id_stock'];
 	$sql = "SELECT * FROM `barang` WHERE id_barang = $id_barang";
 	$query = mysqli_query($connect,$sql);
 	$row = mysqli_fetch_assoc($query);
@@ -37,7 +34,7 @@ if(empty($_SESSION['username'])) {
 	 	<br><br>
 		<div class="form">
 		
-		<h1>Ubah data barang</h1>
+		<h1>Ubah Stock Barang</h1>
 		<form method="POST">
 			<br>
 			<label for="">id_barang</label>
@@ -46,34 +43,17 @@ if(empty($_SESSION['username'])) {
 			<br><br>
 			<label for="">kode barang</label>
 			<br><br>
-			<input type="text" name="kode_barang" value="<?php echo $row['kode_barang']; ?>" required>
-			<br><br>
-			<label for="">Nama barang</label>
-			<br><br>
-			<input type="text" name="nama_barang" value="<?php echo $row['nama_barang']; ?>" required>
+			<input type="text" name="kode_barang" value="<?php echo $row['kode_barang']; ?>" required disabled>
 			<br><br>
 			<label for="">Harga barang</label>
 			<br><br>
 			<input type="text" name="harga_barang" value="<?php echo $row['harga_barang']; ?>" required>
 			<br><br>
-			<label for="">satuan</label>
-			<br><br>
-			<select name="satuan" id_user="">
-				<option value="Biji"<?php if ($row['satuan']=="Biji") { echo "selected";}?>>Biji</option>
-				<option value="PCS"<?php if ($row['satuan']=="PCS") { echo "selected";}?>>PCS</option>
-				<option value="UNIT" <?php if ($row['satuan']=="UNIT") { echo "selected";}?>>UNIT</option>
-				<option value="sachet" <?php if ($row['satuan']=="sachet") { echo "selected";}?>>sachet</option>
-			</select>
-			<br><br>
-			<label for="">diskon</label>
-			<br><br>
-			<input type="text" name="diskon" value="<?php echo $row['diskon']; ?>" required>
-			<br><br>
-				<label for="">jumlah</label>
+			<label for="">jumlah Stock</label>
 			<br><br>
 			<input type="number" name="jumlah" value="<?php echo $row['jumlah']; ?>" required>
 			<br><br>
-			<button class="btn saved" name="done">Simpan perubahan data!	</button>
+			<button class="btn saved" name="done">Simpan perubahan!</button>
 		</form>
 		</div>
 		<br>

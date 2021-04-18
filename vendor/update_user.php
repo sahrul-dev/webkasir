@@ -35,7 +35,10 @@ if(empty($_SESSION['username'])) {
 <body>
 <div class="container">
 	<div class="jumbotron">
+		<button class="btn skyblue to-right" onclick="history.back();">Kembali <i class="far fa-arrow-right right"></i></button>
+	 	<br><br>
 		<div class="form">
+
 		<h1>Update User</h1>
 		<form method="POST">
 			<br>

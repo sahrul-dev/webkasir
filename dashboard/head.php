@@ -21,7 +21,9 @@ if (empty($_SESSION['username'])) {
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"> -->
 	<link rel="stylesheet" href="../lib/DataTables/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="../lib/DataTables/css/dataTables.jqueryui.min.css">
+<link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 	<script src="../lib/jquery.min.js" type="text/javascript"></script>
+	<script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 </head>
 <header>
 	<div class="container">
