@@ -47,7 +47,7 @@ if (empty($_SESSION['username'])) {
 
 <a href="/kasir/dashboard/barang"><section><i class="far fa-box"></i> Barang
 </section></a>
-
+<a href="/kasir/dashboard/kas"><section><i class="far fa-wallet"></i> Kas</section></a>
 <a href="/kasir/dashboard/transaksi"><section><i class="far fa-cash-register"></i> Transaksi
 </section></a>
 <br>
@@ -110,7 +110,7 @@ nav section{
 	width: 100%;
 }
 nav section:hover{
-	background: #08B9FF;
+	background: #03244D;
 	color: #fff;
 }
 
@@ -241,7 +241,7 @@ h1{
 .form button{
 	padding: 15px;
 	width: 100%;
-	background: #08B9FF;
+	background: #03244D;
 	outline: none;
 	cursor: pointer;
 	font-size: 19px;
@@ -300,7 +300,7 @@ table{
 	border-radius: 4px;
 }
 .skyblue{
-	background: #08B9FF;
+	background: #03244D;
 	color: #fff;
 }
 .jumbotron{

@@ -11,7 +11,7 @@
 	 	<div class="box">
 	 		<div class="cards">
 	 		    <p>Total : </p>	
-	 			<h1 class="total">Rp.0</h1>
+	 			<h1 class="total">Rp.<?php number_format($total['total'], 0);?></h1>
 	 		</div>
 	 		<h3>Barcode</h3>
 	 		<br>	

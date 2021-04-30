@@ -91,7 +91,7 @@
                     <td><?php echo $rows['id_barang']; ?></td>
 				    <td><?php echo $rows['kode_barang']; ?></td>
 				    <td><?php echo $rows['nama_barang'];?></td>
-					<td>Rp.<?php echo $rows['harga_barang']; ?></td>
+					<td>Rp.<?php echo number_format($rows['harga_barang'], 0); ?></td>
 					<td><?php echo $rows['satuan']; ?></td>
 					<td><?php echo $rows['diskon']; ?>%</td>
 					<td><?php echo $rows['jumlah']; ?></td>
