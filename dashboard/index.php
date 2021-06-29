@@ -6,49 +6,33 @@
 	<h1>Selamat datang, <?php echo $_SESSION['username']['nama']?></h1>
 	<div class="row">
   <div class="col-md-4">
-    <a class="datcard my-3" href="/AuburnAnswers/Admin/ManageCategory">
-      <span style="color:white;" class="h4">Manage Categories</span>
-      <p>Click here to go to the manage categories page.</p>
+    <a class="datcard my-3" href="Barang">
+      <span style="color:white;" class="h4"><i class="far fa-box"></i> Barang</span>
+      <p>lihat data barang</p>
       <div class="go-corner">
       </div>
     </a>
   </div>
   <div class="col-md-4">
-    <a class="datcard my-3" href="/AuburnAnswers/Admin/ManageCategory">
-      <span style="color:white;" class="h4">See Reports</span>
-      <p>View and download reports for all of your data.</p>
+    <a class="datcard my-3" href="kas">
+      <span style="color:white;" class="h4"><i class="far fa-wallet"></i> Kas</span>
+      <!-- <p>View and download reports for all of your data.</p> -->
       <div class="go-corner">
       </div>
     </a>
   </div>
   <div class="col-md-4">
-    <a class="datcard my-3" href="/AuburnAnswers/Admin/ManageCategory">
-      <span style="color:white;" class="h4">Add Users</span>
-      <p>Control who sees what.</p>
+    <a class="datcard my-3" href="transaksi">
+      <span style="color:white;" class="h4"><i class="far fa-cash-register"></i> Transaksi</span>
+      <!-- <p>Control who sees what.</p> -->
       <div class="go-corner">
       </div>
     </a>
   </div>
   <div class="col-md-4">
-    <a class="datcard my-3" href="/AuburnAnswers/Admin/ManageCategory">
-      <span style="color:white;" class="h4">Manage Categories</span>
-      <p>Click here to go to the manage categories page.</p>
-      <div class="go-corner">
-      </div>
-    </a>
-  </div>
-  <div class="col-md-4">
-    <a class="datcard my-3" href="/AuburnAnswers/Admin/ManageCategory">
-      <span style="color:white;" class="h4">See Reports</span>
-      <p>View and download reports for all of your data.</p>
-      <div class="go-corner">
-      </div>
-    </a>
-  </div>
-  <div class="col-md-4">
-    <a class="datcard my-3" href="/AuburnAnswers/Admin/ManageCategory">
-      <span style="color:white;" class="h4">Add Users</span>
-      <p>Control who sees what.</p>
+    <a class="datcard my-3" href="user">
+      <span style="color:white;" class="h4"><i class="far fa-user"></i> User kasir</span>
+      <!-- <p>Click here to go to the manage categories page.</p> -->
       <div class="go-corner">
       </div>
     </a>
@@ -56,7 +40,7 @@
 </div>
     </div>
 	</div>
-
+  <div class="copyright"><i class="far fa-pen"></i> Designed by Mohammad Sahrullah</div>
 </body>
 </html>
 <script>
@@ -76,7 +60,10 @@
   background-color: rgb(224, 102, 36);
   border-radius: 0 4px 0 32px;
 }
-
+.copyright{
+  
+  text-align: center;
+}
 span {
   color: white;
 }

@@ -36,7 +36,7 @@ CREATE TABLE `barang` (
   `satuan` varchar(100) NOT NULL,
   `diskon` varchar(100) NOT NULL,
   `jumlah` bigint(10) NOT NULL,
-  `tanggal_masuk` date NOT NULL DEFAULT current_timestamp()
+  `tanggal_masuk` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

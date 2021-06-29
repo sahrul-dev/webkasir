@@ -1,10 +1,9 @@
 <?php
-session_start();
-
-if (empty($_SESSION['username'])) {
-	
-}else{
+require_once 'vendor/connect.php';
+if (!empty($_SESSION['username'])) {
 	header('location:dashboard/index');
+}else{
+	
 }
 
 ?>
@@ -17,27 +16,34 @@ if (empty($_SESSION['username'])) {
 	<link rel="stylesheet" href="../lib/css/all.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="asset/img/logo.png" type="image/x-icon">
 </head>
 <body>
 <div class="wrapper">
 	<div class="column">
-	<form method="POST" action="vendor/auth"> 
+	<form method="POST" action="vendor/auth" enctype="multipart/formdata"> 
 	<div class="box">
+	<img src="asset/img/logo.png" alt="">
 	<h1>Masuk!</h1>
 	<small>Masukan identitas pengguna untuk melanjutkan.</small>
 	<br>
 	<input type="text" placeholder="nama pengguna" name="username" required>
 	<input type="password" placeholder="kata sandi" name="password" required>
+	
 	<br>
 	<button class="btn" type="submit" name="done">Masuk! <i class="far fa-arrow-right ico-right"></i></button>
 	<br><br>
 
 	</div>
 </form>
+<?php if($error){ ?>
+	<br>
+    <div class="error">Nama pengguna dan password salah!, coba lagi</div>
+ <?php } ?>
 	</div>
 	<div class="column">
 		<div class="box">
-			<img src="" alt="">
+		
 		</div>
 	</div>
 </div>
@@ -51,6 +57,7 @@ if (empty($_SESSION['username'])) {
 		-webkit-font-smoothing: antialiased;
 		scroll-behavior: smooth;
 		font-family: 'Poppins', sans-serif;
+		box-sizing: border-box;
 	}
 	:root{
 		--primary: #00DF9A;
@@ -63,6 +70,9 @@ if (empty($_SESSION['username'])) {
 	}
 	.ico-right{
 		margin-left: 10px;
+	}
+	.error{
+		color: red;
 	}
 	.context{
 		text-align: center;
@@ -87,8 +97,10 @@ if (empty($_SESSION['username'])) {
 	.box{
 		width: 600px;
 		color: #333;
+		box-sizing: border-box;
 		margin-top: 150px;
 	}
+
 	.btn{
 		padding: 15px;
 		width: 100%;
@@ -99,7 +111,7 @@ if (empty($_SESSION['username'])) {
 		outline: none;
 		transition: 0.4s ease-out;
 		color: var(--secondprimary);
-		background:  #08B9FF;
+		background: #03244D;
 	}
 	.btn:hover{
 		box-shadow: 0px 0px 5px var(--primary);
@@ -114,6 +126,9 @@ if (empty($_SESSION['username'])) {
 		font-weight: 700;
 		color: #333;
 	}
+	.column img{
+		max-width: 50px;
+	}
 	.column input{
 		width: 100%;
 		box-sizing: border-box;
@@ -127,12 +142,16 @@ if (empty($_SESSION['username'])) {
 		background: #f2f2f2;
 	}
 	.column:nth-child(2){
-		background: #dcdcdc;
+		/*background: #dcdcdc;*/
+		background: url('asset/img/pexels-photo-4199523.jpeg');
 		background-size: cover;
 	}
 	@media only screen and (max-width: 780px){
 		.column:nth-child(2){
 			display: none;
+		}
+		.box{
+			width: 100%;
 		}
 	}
 </style>

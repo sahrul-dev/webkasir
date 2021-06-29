@@ -12,16 +12,16 @@ if(mysqli_num_rows ($query)>0){
 	$row = mysqli_fetch_array ($query);
 	$_SESSION['username'] = $row;
 
-header("location:../dashboard/");	
+header("location:../dashboard/");
+$error = false;	
 }
 else {
+$error = true;
+
 ?>
-<script type="text/javascript">alert('Maaf data pengguna yang anda masukan tidak terdaftar atau mungkin salah!'); document.location = "../";</script>
+<script type="text/javascript">document.location = "../?error=true";</script>
 <?php
 }
 ?>
 
 <!-- buat validasi no induk biar masuk ke halaman berikutnya -->
-
-?>
-?>

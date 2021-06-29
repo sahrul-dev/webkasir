@@ -22,6 +22,7 @@ if (empty($_SESSION['username'])) {
 	<link rel="stylesheet" href="../lib/DataTables/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="../lib/DataTables/css/dataTables.jqueryui.min.css">
 <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+<link rel="shortcut icon" href="../asset/img/logo.png" type="image/x-icon">
 	<script src="../lib/jquery.min.js" type="text/javascript"></script>
 	<script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 </head>
@@ -43,12 +44,12 @@ if (empty($_SESSION['username'])) {
 <div class="body-nav">
 
 <small>MENU</small>
-<a href="/kasir/dashboard/index"><section><i class="fas fa-th"></i> Dashboard</section></a>
+<a href="index"><section><i class="fas fa-th"></i> Dashboard</section></a>
 
-<a href="/kasir/dashboard/barang"><section><i class="far fa-box"></i> Barang
+<a href="barang"><section><i class="far fa-box"></i> Barang
 </section></a>
-<a href="/kasir/dashboard/kas"><section><i class="far fa-wallet"></i> Kas</section></a>
-<a href="/kasir/dashboard/transaksi"><section><i class="far fa-cash-register"></i> Transaksi
+<a href="kas"><section><i class="far fa-wallet"></i> Kas</section></a>
+<a href="transaksi"><section><i class="far fa-cash-register"></i> Transaksi
 </section></a>
 <br>
 <?php 
@@ -56,7 +57,7 @@ if($_SESSION['username']['level'] == 'SuperAdmin') {
 ?>
 
 <small>Master</small>
-<a href="/kasir/dashboard/user"><section><i class="far fa-user"></i> User Kasir</section></a>
+<a href="user"><section><i class="far fa-user"></i> User Kasir</section></a>
 </div>
 <?php
 }else{
@@ -64,7 +65,7 @@ if($_SESSION['username']['level'] == 'SuperAdmin') {
 }
 ?>
 <div class="option-menu">
-	<a href="/kasir/dashboard/logout" onclick="return confirm('Keluar?');"><section><i class="far fa-sign-out-alt"></i> Sign out</section></a>
+	<a href="logout" onclick="return confirm('Keluar?');"><section><i class="far fa-sign-out-alt"></i> Logout</section></a>
 </div>
 <div class="div"></div>
 </nav>
